@@ -1,0 +1,4 @@
+Pasta criada no AWS!
+Primeiro tive que entrar no Learner Lab, depois usar SSH para acessar minha instância de EC2.
+Criei uma chave SSH, adicionei ela no github, e depois clonei. Se isso aqui tá online, foi porque tive sucesso
+em fazer upload para a plataforma.
