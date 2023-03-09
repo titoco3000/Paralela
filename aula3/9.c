@@ -14,6 +14,15 @@ void liberar_matriz(int** matriz, int altura)
         free(matriz[i]);
     free(matriz);
 }
+void modular(int** matriz, int altura, int largura) {
+    for (int i = 0; i < altura; i++)
+        for (int j = 0; j < largura; j++)
+        {
+            if (matriz[i][j] < 0)
+                matriz[i][j] *= -1;
+        }
+}
+
 int main()
 {
     srand(32120613);
@@ -25,19 +34,19 @@ int main()
     {
         for (int j = 0; j < m_size; j++)
         {
-            matriz[i][j] = rand() % 10;
+            matriz[i][j] = rand() % 20 - 10;
             printf(" %d", matriz[i][j]);
         }
         printf("\n");
     }
-    int menor_x = 0, menor_y = 0;
+    printf("\nmodulo:\n");
+    modular(matriz, m_size, m_size);
     for (int i = 0; i < m_size; i++)
+    {
         for (int j = 0; j < m_size; j++)
-            if (matriz[i][j] < matriz[menor_y][menor_x])
-            {
-                menor_y = i;
-                menor_x = j;
-            }
-    printf("primeira linha com o menor valor (%d): %d\n", matriz[menor_y][menor_x], menor_y);
+            printf(" %d", matriz[i][j]);
+        printf("\n");
+    }
+
     liberar_matriz(matriz, m_size);
 }

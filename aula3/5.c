@@ -14,6 +14,16 @@ void liberar_matriz(int** matriz, int altura)
         free(matriz[i]);
     free(matriz);
 }
+
+void multiplicar_linha(int** multiplicando, int largura, int linha, int multiplicador) {
+    for (int i = 0; i < largura; i++)
+        multiplicando[linha][i] *= multiplicador;
+}
+void multiplicar_coluna(int** multiplicando, int altura, int coluna, int multiplicador) {
+    for (int i = 0; i < altura; i++)
+        multiplicando[i][coluna] *= multiplicador;
+}
+
 int main()
 {
     srand(32120613);
@@ -30,14 +40,17 @@ int main()
         }
         printf("\n");
     }
-    int menor_x = 0, menor_y = 0;
+    printf("linha 0 *2, coluna 1 *5\n");
+    multiplicar_linha(matriz, m_size, 0, 2);
+    multiplicar_coluna(matriz, m_size, 1, 5);
     for (int i = 0; i < m_size; i++)
+    {
         for (int j = 0; j < m_size; j++)
-            if (matriz[i][j] < matriz[menor_y][menor_x])
-            {
-                menor_y = i;
-                menor_x = j;
-            }
-    printf("primeira linha com o menor valor (%d): %d\n", matriz[menor_y][menor_x], menor_y);
+        {
+            printf(" %d", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
     liberar_matriz(matriz, m_size);
 }

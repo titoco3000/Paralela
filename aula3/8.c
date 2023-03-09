@@ -14,6 +14,15 @@ void liberar_matriz(int** matriz, int altura)
         free(matriz[i]);
     free(matriz);
 }
+
+int** criar_transposta(int** matriz, int altura, int largura) {
+    int** t = criar_matriz(largura, altura);
+    for (int i = 0; i < largura; i++)
+        for (int j = 0; j < altura; j++)
+            t[i][j] = matriz[j][i];
+    return t;
+}
+
 int main()
 {
     srand(32120613);
@@ -30,14 +39,15 @@ int main()
         }
         printf("\n");
     }
-    int menor_x = 0, menor_y = 0;
+    printf("\ntransposta:\n");
+    int** transposta = criar_transposta(matriz, m_size, m_size);
     for (int i = 0; i < m_size; i++)
+    {
         for (int j = 0; j < m_size; j++)
-            if (matriz[i][j] < matriz[menor_y][menor_x])
-            {
-                menor_y = i;
-                menor_x = j;
-            }
-    printf("primeira linha com o menor valor (%d): %d\n", matriz[menor_y][menor_x], menor_y);
+            printf(" %d", transposta[i][j]);
+        printf("\n");
+    }
+
     liberar_matriz(matriz, m_size);
+    liberar_matriz(transposta, m_size);
 }

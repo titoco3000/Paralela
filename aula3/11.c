@@ -14,6 +14,7 @@ void liberar_matriz(int** matriz, int altura)
         free(matriz[i]);
     free(matriz);
 }
+
 int main()
 {
     srand(32120613);
@@ -21,7 +22,8 @@ int main()
     int m_size = 3;
     printf("digite o tamanho da matriz: %d\n", m_size);
     int** matriz = criar_matriz(m_size, m_size);
-    for (int i = 0; i < m_size; i++)
+    int i;
+    for (i = 0; i < m_size; i++)
     {
         for (int j = 0; j < m_size; j++)
         {
@@ -30,14 +32,28 @@ int main()
         }
         printf("\n");
     }
-    int menor_x = 0, menor_y = 0;
-    for (int i = 0; i < m_size; i++)
+
+    for (i = 0; i < m_size; i++)
+        matriz[1][i] += matriz[0][i];
+
+    printf("\n");
+    for (i = 0; i < m_size; i++)
+    {
         for (int j = 0; j < m_size; j++)
-            if (matriz[i][j] < matriz[menor_y][menor_x])
-            {
-                menor_y = i;
-                menor_x = j;
-            }
-    printf("primeira linha com o menor valor (%d): %d\n", matriz[menor_y][menor_x], menor_y);
+            printf(" %d", matriz[i][j]);
+        printf("\n");
+    }
+
+    for (i = 0; i < m_size; i++)
+        matriz[1][i] *= matriz[0][i];
+
+    printf("\n");
+    for (i = 0; i < m_size; i++)
+    {
+        for (int j = 0; j < m_size; j++)
+            printf(" %d", matriz[i][j]);
+        printf("\n");
+    }
+
     liberar_matriz(matriz, m_size);
 }
