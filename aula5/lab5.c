@@ -3,6 +3,8 @@
 #include <omp.h>
 #include <math.h>
 
+//#define serial
+
 double f(double x){
     return exp(x);
 }
@@ -19,10 +21,12 @@ int main(int argc, char * argv[]) {
 
     double segm_size = (fim-inicio)/n;
     double approx = 0.0;
-
+    #ifndef serial
     #pragma omp parallel for num_threads(thread_count) reduction(+:approx)
+    #endif
     for(int i=0;i<n;i++){
-        approx+=(f(inicio+segm_size*i)+f(inicio+segm_size*(i+1)))*0.5;
+        double novo = (f(inicio+segm_size*i)+f(inicio+segm_size*(i+1)))*0.5;
+        approx+=novo;
     }
 
     printf("approx: %f\n",approx);
