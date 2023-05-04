@@ -12,13 +12,13 @@ sys     0m0.000s
 void calcular_e_taylor_gmp(unsigned long precisao) {
     mpz_t sum;
     mpz_t fat_inverso;
-    mpz_init_set_ui(sum,10);
-    mpz_pow_ui(sum,sum,10000000);
+    mpz_init_set_ui(sum,1000);
+    mpz_pow_ui(sum,sum,100000000);
 
     mpz_init_set(fat_inverso,sum);
 
     for (unsigned long i = 1; i < precisao; i++) {
-        printf("%lu/%lu\n",i,precisao);
+        //printf("%lu/%lu\n",i,precisao);
         mpz_tdiv_q_ui(fat_inverso, fat_inverso,i);
         mpz_add(sum,sum,fat_inverso);
     }
@@ -31,6 +31,6 @@ void calcular_e_taylor_gmp(unsigned long precisao) {
 }
 
 int main(){
-    calcular_e_taylor_gmp(1000);
+    calcular_e_taylor_gmp(100000);
     return 0;
 }
