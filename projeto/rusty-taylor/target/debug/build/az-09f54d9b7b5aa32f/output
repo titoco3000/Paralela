@@ -1,0 +1,6 @@
+$ mkdir -p "/home/tito/Paralela/projeto/rusty-taylor/target/debug/build/az-09f54d9b7b5aa32f/out/try_track_caller"
+$ cd "/home/tito/Paralela/projeto/rusty-taylor/target/debug/build/az-09f54d9b7b5aa32f/out/try_track_caller"
+$ printf '%s' "// try_tra"... > "/home/tito/Paralela/projeto/rusty-taylor/target/debug/build/az-09f54d9b7b5aa32f/out/try_track_caller/try_track_caller.rs"
+$ cd "/home/tito/Paralela/projeto/rusty-taylor/target/debug/build/az-09f54d9b7b5aa32f/out/try_track_caller" && "rustc" "try_track_caller.rs" "--emit=dep-info,metadata" >& /dev/null
+cargo:rustc-cfg=track_caller
+$ rm -r "/home/tito/Paralela/projeto/rusty-taylor/target/debug/build/az-09f54d9b7b5aa32f/out/try_track_caller"
