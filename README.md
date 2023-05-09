@@ -30,3 +30,11 @@ O máximo de casas geradas foi 500000, em 9m41.782s
 ### DAG
 
 ![DAGspigot drawio (4)](https://github.com/titoco3000/Paralela/assets/28358812/5fdf1602-52c8-497e-a919-024eedd66c85)
+
+Limite Inferior de execução:  **3t + (n/2)t** (sendo t o tempo para executar cada tarefa)
+
+Processadores necessarios para se coseguir o tempo mínimo de execução: **2**
+
+Grau máximo de concorrência: **2**
+
+Paralelismo médio: **6/10 = 60%**
