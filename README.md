@@ -24,6 +24,8 @@ Tempo total (100000 digitos):
     sys     0m0.516s
    
 Speedup = 1.8832
+
+O máximo de casas geradas foi 500000, em 9m41.782s
     
 ### DAG
 
