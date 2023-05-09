@@ -29,4 +29,4 @@ O máximo de casas geradas foi 500000, em 9m41.782s
     
 ### DAG
 
-![DAGspigot drawio (3)](https://github.com/titoco3000/Paralela/assets/28358812/bf2cd97b-1203-4148-8aaf-281ae6471fb2)
+![DAGspigot drawio (4)](https://github.com/titoco3000/Paralela/assets/28358812/5fdf1602-52c8-497e-a919-024eedd66c85)
