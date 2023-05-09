@@ -64,7 +64,7 @@ void spigot(int* a, int sa, char* buffer, int* bufoc) {
 }
 
 int main() {
-    int numDigits = 1000;
+    int numDigits = 100000;
     int *valueArr = malloc(sizeof(int)*numDigits);
 
     //preenche o vetor com 1s

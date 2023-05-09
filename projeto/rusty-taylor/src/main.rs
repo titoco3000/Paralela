@@ -47,7 +47,7 @@ fn calcular_e_serial_float(voltas: u32) ->String {
     println!("Produzindo arquivo (float serial)...");
     return sum.to_string_radix_round(10, Some(1000000), Round::Down);
 }
-
+//easter egg marguinhos esteve aqui
 fn calcular_e_serial_int(voltas: u32) ->String {
     use rug::{Assign, Integer};
     let mut sum = Integer::new();
