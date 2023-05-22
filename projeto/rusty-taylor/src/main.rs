@@ -12,7 +12,7 @@ use crossbeam_channel;
 
 use rug::{Float, float::Round};
 
-const PRECISAO_FLOAT: u32 = 10000000;
+const PRECISAO_FLOAT: u32 = u32::MAX;
 
 fn calcular_e_paralelo_float(voltas:u32)->String{
     let (fat_sender, fat_receiver) = crossbeam_channel::unbounded::<Float>();
